@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kor Beng Ha — Professional Profile</title>
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy2: #112240;
+    --navy3: #1d3557;
+    --gold: #c9a84c;
+    --gold2: #e8c96d;
+    --white: #f0f4ff;
+    --gray: #8892b0;
+    --light: #ccd6f6;
+    --accent: #64ffda;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--navy);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ─────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(10,22,40,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--gray); text-decoration: none; font-size: 0.85rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 6rem 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 20% 80%, rgba(100,255,218,0.04) 0%, transparent 60%);
+  }
+  .hero-inner {
+    max-width: 1100px; width: 100%;
+    display: flex; align-items: center; gap: 4rem;
+    position: relative;
+  }
+  .hero-photo-wrap {
+    flex-shrink: 0;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--gold), var(--accent));
+    box-shadow: 0 0 40px rgba(201,168,76,0.3), 0 0 80px rgba(201,168,76,0.1);
+  }
+  .hero-photo {
+    width: 100%; height: 100%;
+    border-radius: 50%; object-fit: cover; object-position: center top;
+    display: block;
+    background: var(--navy2);
+  }
+  .hero-text { flex: 1; }
+  .hero-tag {
+    font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .hero-name {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800; line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .hero-name span { color: var(--gold); }
+  .hero-title {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--gray); margin-bottom: 1.5rem; font-weight: 400;
+  }
+  .hero-intro {
+    font-size: 0.95rem; color: var(--gray);
+    max-width: 520px; margin-bottom: 2rem; line-height: 1.8;
+  }
+  .hero-cta {
+    display: inline-flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn {
+    padding: 0.7rem 1.6rem; border-radius: 4px;
+    font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.06em; text-decoration: none;
+    transition: all .25s; cursor: pointer; border: none;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+  }
+  .btn-primary:hover {
+    background: var(--gold2);
+    box-shadow: 0 0 20px rgba(201,168,76,0.4);
+  }
+  .btn-outline {
+    border: 1px solid var(--gold); color: var(--gold); background: transparent;
+  }
+  .btn-outline:hover {
+    background: rgba(201,168,76,0.08);
+  }
+
+  /* ── SECTION BASE ─────────────────────────── */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700; color: var(--white); margin-bottom: 1rem;
+  }
+  .section-divider {
+    width: 60px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin-bottom: 3rem;
+  }
+
+  /* ── CONTACT BAR ─────────────────────────── */
+  #contact-bar {
+    background: var(--navy2);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 2rem;
+  }
+  .contact-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;
+  }
+  .contact-item {
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .contact-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: var(--gold); flex-shrink: 0;
+  }
+  .contact-label { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
+  .contact-value { font-size: 0.95rem; color: var(--white); font-weight: 500; }
+
+  /* ── STATS ───────────────────────────────── */
+  #stats { background: var(--navy); }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+  }
+  .stat-card {
+    text-align: center; padding: 2.5rem 1.5rem;
+    background: var(--navy2);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 12px;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.1);
+  }
+  .stat-number {
+    font-size: 3.2rem; font-weight: 800;
+    color: var(--gold); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-suffix { font-size: 2rem; }
+  .stat-label { font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.12em; }
+
+  /* ── ABOUT ───────────────────────────────── */
+  #about { background: var(--navy2); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+  }
+  .about-text p { color: var(--gray); line-height: 1.9; margin-bottom: 1rem; font-size: 0.95rem; }
+  .about-highlights { display: flex; flex-direction: column; gap: 1.2rem; }
+  .highlight-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.2rem;
+    background: rgba(10,22,40,0.5);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+  }
+  .highlight-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .highlight-title { font-size: 0.85rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+  .highlight-desc { font-size: 0.8rem; color: var(--gray); }
+
+  /* ── SKILLS RADAR ─────────────────────────── */
+  #skills { background: var(--navy); }
+  .skills-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  #radarCanvas {
+    width: 100%; max-width: 420px; display: block; margin: 0 auto;
+  }
+  .skill-list { display: flex; flex-direction: column; gap: 1.2rem; }
+  .skill-row label {
+    display: flex; justify-content: space-between;
+    font-size: 0.85rem; color: var(--light); margin-bottom: 0.4rem;
+  }
+  .skill-bar-bg {
+    height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;
+  }
+  .skill-bar-fill {
+    height: 100%; border-radius: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    width: 0; transition: width 1.2s ease;
+  }
+
+  /* ── TIMELINE ─────────────────────────────── */
+  #timeline { background: var(--navy2); }
+  .timeline-ui {
+    position: relative; padding-bottom: 1rem;
+  }
+  .timeline-card {
+    background: var(--navy);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px; padding: 2rem;
+    margin-bottom: 2.5rem;
+    min-height: 200px;
+    transition: opacity .4s ease;
+  }
+  .tc-period {
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.4rem;
+  }
+  .tc-role {
+    font-size: 1.25rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem;
+  }
+  .tc-company {
+    font-size: 0.9rem; color: var(--accent); margin-bottom: 1rem;
+  }
+  .tc-desc {
+    font-size: 0.85rem; color: var(--gray); line-height: 1.8;
+  }
+  .tc-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .tc-tag {
+    font-size: 0.72rem; padding: 0.25rem 0.7rem;
+    border: 1px solid rgba(201,168,76,0.3); border-radius: 20px; color: var(--gold);
+  }
+
+  /* Slider control */
+  .slider-wrap {
+    position: relative; padding: 1rem 0 3rem;
+  }
+  .slider-track {
+    position: relative; height: 4px;
+    background: rgba(255,255,255,0.1); border-radius: 2px;
+    margin: 0 12px;
+  }
+  .slider-fill {
+    position: absolute; left: 0; top: 0; height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    border-radius: 2px; pointer-events: none;
+  }
+  .slider-thumb {
+    position: absolute; top: 50%; transform: translate(-50%, -50%);
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 4px rgba(201,168,76,0.25);
+    cursor: grab; z-index: 2;
+  }
+  .slider-thumb:active { cursor: grabbing; }
+  .slider-ticks {
+    display: flex; justify-content: space-between;
+    margin: 0.8rem 12px 0;
+  }
+  .slider-tick {
+    font-size: 0.65rem; color: var(--gray); cursor: pointer;
+    transition: color .2s;
+  }
+  .slider-tick.active { color: var(--gold); font-weight: 700; }
+  .slider-year-label {
+    text-align: center; font-size: 1.1rem; font-weight: 700;
+    color: var(--gold); margin-top: 0.5rem;
+  }
+
+  /* ── EXPERIENCE LIST ─────────────────────── */
+  #experience { background: var(--navy); }
+  .exp-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+  .exp-card {
+    background: var(--navy2);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 10px; padding: 1.5rem 1.8rem;
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    transition: border-color .25s, box-shadow .25s;
+  }
+  .exp-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    box-shadow: 0 4px 20px rgba(201,168,76,0.08);
+  }
+  .exp-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--gold); margin-top: 6px; flex-shrink: 0;
+  }
+  .exp-period { font-size: 0.75rem; color: var(--gray); margin-bottom: 0.3rem; }
+  .exp-role { font-size: 1rem; font-weight: 700; color: var(--white); }
+  .exp-company { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.6rem; }
+  .exp-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.7; }
+
+  /* ── EDUCATION ───────────────────────────── */
+  #education { background: var(--navy2); }
+  .edu-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;
+  }
+  .edu-card {
+    background: var(--navy);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 10px; padding: 1.5rem;
+  }
+  .edu-year { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+  .edu-degree { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+  .edu-school { font-size: 0.82rem; color: var(--gray); }
+
+  /* ── AWARDS ──────────────────────────────── */
+  #awards { background: var(--navy); }
+  .awards-grid {
+    display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;
+  }
+  .award-card {
+    flex: 1; min-width: 220px; max-width: 320px;
+    text-align: center; padding: 2rem 1.5rem;
+    background: var(--navy2);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+  }
+  .award-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  .award-title { font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 0.3rem; }
+  .award-org { font-size: 0.8rem; color: var(--gray); }
+
+  /* ── FOOTER ──────────────────────────────── */
+  footer {
+    background: var(--navy2);
+    border-top: 1px solid rgba(201,168,76,0.12);
+    padding: 2.5rem 2rem; text-align: center;
+    color: var(--gray); font-size: 0.8rem;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── RESPONSIVE ──────────────────────────── */
+  @media (max-width: 768px) {
+    nav { padding: 0.8rem 1.2rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.75rem; }
+    .hero-inner { flex-direction: column; text-align: center; gap: 2rem; }
+    .hero-intro { margin: 0 auto 2rem; }
+    .hero-cta { justify-content: center; }
+    .about-grid, .skills-layout { grid-template-columns: 1fr; }
+    .about-highlights { margin-top: 0; }
+  }
+  @media (max-width: 480px) {
+    .hero-photo-wrap { width: 160px; height: 160px; }
+    .nav-links { display: none; }
+    section { padding: 3.5rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">KBH</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="OnlineDSC_0438.jpg" alt="Kor Beng Ha" />
+    </div>
+    <div class="hero-text">
+      <p class="hero-tag">Available for opportunities</p>
+      <h1 class="hero-name">Kor <span>Beng Ha</span></h1>
+      <p class="hero-title">Senior Administrative &amp; Operations Professional</p>
+      <p class="hero-intro">
+        A seasoned professional with 35+ years of cross-industry experience spanning quality engineering,
+        supply chain administration, HR operations, and research facility management. Known for meticulous
+        attention to detail, proactive problem-solving, and building effective relationships across all
+        organisational levels — from factory floor to senior management.
+      </p>
+      <div class="hero-cta">
+        <a href="mailto:bengha3kor@gmail.com" class="btn btn-primary">Get in Touch</a>
+        <a href="#timeline" class="btn btn-outline">View Career Journey</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT BAR ── -->
+<div id="contact-bar">
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon">📱</div>
+      <div>
+        <div class="contact-label">Mobile</div>
+        <div class="contact-value">+65 9863 1389</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">bengha3kor@gmail.com</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Singapore</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🏢</div>
+      <div>
+        <div class="contact-label">Current</div>
+        <div class="contact-value">Singapore Polytechnic</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── STATS (count up on scroll) ── -->
+<section id="stats">
+  <div class="section-inner">
+    <p class="section-label">By the Numbers</p>
+    <h2 class="section-title">A Career Built on Impact</h2>
+    <div class="section-divider"></div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number"><span class="counter" data-target="35">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number"><span class="counter" data-target="10">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">Organisations Served</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number"><span class="counter" data-target="6">0</span></div>
+        <div class="stat-label">Industries Covered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number"><span class="counter" data-target="2">0</span></div>
+        <div class="stat-label">Ovation Awards Won</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">Versatile. Reliable. Resourceful.</h2>
+    <div class="section-divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>With a career spanning from quality assurance on factory floors to managing research facilities at Singapore Polytechnic, I bring a rare depth and breadth of administrative and operational expertise. I thrive in environments that demand precision, multitasking, and people-centric coordination.</p>
+        <p>Throughout my career I have served as the operational backbone for multinational corporations including Broadcom (Avago/LSI), Kulicke &amp; Soffa, Lucent Technologies, and Delco Electronics — managing supply chains, HR functions, procurement, and team administration.</p>
+        <p>My interests in reading, music, and event planning reflect the creativity and initiative I bring to every role. I recently completed AI training courses in June and August 2025, demonstrating my commitment to staying current in a rapidly evolving landscape.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <span class="highlight-icon">🎯</span>
+          <div>
+            <div class="highlight-title">Cross-functional Coordinator</div>
+            <div class="highlight-desc">Bridging procurement, IT, HR, finance, and research teams with seamless communication and follow-through.</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">📊</span>
+          <div>
+            <div class="highlight-title">Data-Driven Administrator</div>
+            <div class="highlight-desc">Proficient in Excel macros, VLOOKUP, pivot tables, and supply chain forecasting systems like E2open.</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🤝</span>
+          <div>
+            <div class="highlight-title">Stakeholder Liaison</div>
+            <div class="highlight-desc">Proven track record liaising across local and global teams, suppliers, government agencies, and senior management.</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🔬</span>
+          <div>
+            <div class="highlight-title">Facility &amp; Lab Management</div>
+            <div class="highlight-desc">Managing MOM pressure vessel registration, radiation licenses, and laboratory upkeep for research environments.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS RADAR ── -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label">Competencies</p>
+    <h2 class="section-title">Core Skills Radar</h2>
+    <div class="section-divider"></div>
+    <div class="skills-layout">
+      <div>
+        <canvas id="radarCanvas" width="420" height="420"></canvas>
+      </div>
+      <div class="skill-list">
+        <div class="skill-row" data-pct="92">
+          <label><span>Administrative Operations</span><span>92%</span></label>
+          <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-row" data-pct="85">
+          <label><span>Procurement &amp; Supply Chain</span><span>85%</span></label>
+          <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-row" data-pct="88">
+          <label><span>Stakeholder Communication</span><span>88%</span></label>
+          <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-row" data-pct="80">
+          <label><span>MS Office &amp; Data Analysis</span><span>80%</span></label>
+          <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-row" data-pct="82">
+          <label><span>Event &amp; Programme Coordination</span><span>82%</span></label>
+          <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+        </div>
+        <div class="skill-row" data-pct="78">
+          <label><span>Quality &amp; Process Management</span><span>78%</span></label>
+          <div class="skill-bar-bg"><div class="skill-bar-fill"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAREER TIMELINE SLIDER ── -->
+<section id="timeline">
+  <div class="section-inner">
+    <p class="section-label">Career Journey</p>
+    <h2 class="section-title">Drag Through My Career</h2>
+    <div class="section-divider"></div>
+    <div class="timeline-ui">
+      <div class="timeline-card" id="timelineCard">
+        <div class="tc-period" id="tcPeriod"></div>
+        <div class="tc-role" id="tcRole"></div>
+        <div class="tc-company" id="tcCompany"></div>
+        <div class="tc-desc" id="tcDesc"></div>
+        <div class="tc-tags" id="tcTags"></div>
+      </div>
+      <div class="slider-wrap">
+        <div class="slider-track" id="sliderTrack">
+          <div class="slider-fill" id="sliderFill"></div>
+          <div class="slider-thumb" id="sliderThumb"></div>
+        </div>
+        <div class="slider-ticks" id="sliderTicks"></div>
+        <div class="slider-year-label" id="sliderYearLabel"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label">Work History</p>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="section-divider"></div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-period">May 2017 – Present</div>
+          <div class="exp-role">Executive</div>
+          <div class="exp-company">Singapore Polytechnic</div>
+          <div class="exp-desc">Coordinates lab setup, procurement administration, staff onboarding/offboarding, vendor liaison, asset management, IT representation, and facilities maintenance for research laboratories. Manages MOM pressure vessel registration and radiation license renewal.</div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-period">Jan 2009 – Apr 2016</div>
+          <div class="exp-role">Supply Chain Administrator</div>
+          <div class="exp-company">Broadcom Limited (formerly Avago / LSI Corporation)</div>
+          <div class="exp-desc">Focal point between factory planning teams and contract manufacturers on E2open forecasting. Consolidated daily/weekly forecasts, managed travel arrangements globally, coordinated training, and handled procurement for local and global teams across Lsi Logic, LSI Technology, Avago Technologies, and Broadcom.</div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-period">Sep 1997 – Nov 2007</div>
+          <div class="exp-role">TQC Administrator</div>
+          <div class="exp-company">Lucent Technologies (Singapore) → LSI Technology</div>
+          <div class="exp-desc">Administered the employee suggestion scheme achieving 90% closure; drove 80% employee participation in QC teams. Organised in-house QC conventions, coached teams in National IQC conventions, and served as site coordinator for the global employee recognition programme, including representation at the US Allentown office.</div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-period">Jan 1992 – Sep 1997</div>
+          <div class="exp-role">Quality Engineering Assistant</div>
+          <div class="exp-company">Delco Electronics Singapore Pte Ltd</div>
+          <div class="exp-desc">Administered document control, generated quality plans, FMEA, and PPAP documentation. Handled customer complaints with 100% closure rate on returns and corrective actions coordination.</div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-period">Dec 2007 – Nov 2008</div>
+          <div class="exp-role">Temp Planner → Associate Buyer</div>
+          <div class="exp-company">Kulicke &amp; Soffa Pte Ltd</div>
+          <div class="exp-desc">Handled procurement and sourcing of all machine hardware. Achieved 100% success in sustaining supplier support and driving lead time improvements to meet urgent production and engineering needs.</div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-period">May 2016 – Dec 2016</div>
+          <div class="exp-role">HR Executive</div>
+          <div class="exp-company">Beyonics International Pte Ltd</div>
+          <div class="exp-desc">Managed employee badges, access systems, new hire e-account setup, locker administration, training coordination for operators, insurance claims, and HR filing.</div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-dot"></div>
+        <div>
+          <div class="exp-period">Jul 1987 – Aug 1990</div>
+          <div class="exp-role">Quality Assurance Technician</div>
+          <div class="exp-company">Varta Batteries Pte Ltd</div>
+          <div class="exp-desc">Conducted reliability testing of cell batteries, prepared golden samples for UK Underwriters Laboratories qualification, and consolidated analytical reports on competitor products.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="education">
+  <div class="section-inner">
+    <p class="section-label">Education &amp; Training</p>
+    <h2 class="section-title">Qualifications</h2>
+    <div class="section-divider"></div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-year">1985 – 1987</div>
+        <div class="edu-degree">Diploma in Production Technology</div>
+        <div class="edu-school">German Singapore Institute</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">1983 – 1984</div>
+        <div class="edu-degree">GCE 'A' Level</div>
+        <div class="edu-school">Nanyang Junior College</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">1979 – 1982</div>
+        <div class="edu-degree">GCE 'O' Level</div>
+        <div class="edu-school">Tanjong Katong Secondary Technical School</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2025</div>
+        <div class="edu-degree">AI Tools for Creative Professionals</div>
+        <div class="edu-school">Professional Development Course</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2025</div>
+        <div class="edu-degree">Empowering Digital Marketers with Essential AI Tools</div>
+        <div class="edu-school">Professional Development Course</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">Certifications</div>
+        <div class="edu-degree">Lean Expert Certification · Quality Circle Facilitator</div>
+        <div class="edu-school">Eagles Wings · PSB Singapore · National Productivity Board</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AWARDS ── -->
+<section id="awards">
+  <div class="section-inner">
+    <p class="section-label">Recognition</p>
+    <h2 class="section-title">Awards &amp; Achievements</h2>
+    <div class="section-divider"></div>
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-icon">🏆</div>
+        <div class="award-title">Ovation Award — Innovation &amp; Creativity</div>
+        <div class="award-org">Lucent Technologies, 1998</div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🌟</div>
+        <div class="award-title">Ovation Award — Customer Satisfaction</div>
+        <div class="award-org">Lucent Technologies, 1998</div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🥇</div>
+        <div class="award-title">National QC Convention Medals</div>
+        <div class="award-org">Spring Singapore — QC teams coached by Beng Ha</div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">💡</div>
+        <div class="award-title">Patent Submission Coordinator</div>
+        <div class="award-org">Submitted employee patent ideas to US attorney</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p style="margin-bottom:0.5rem; color: var(--light); font-size: 0.9rem;">Kor Beng Ha — Singapore</p>
+  <p><a href="mailto:bengha3kor@gmail.com">bengha3kor@gmail.com</a> &nbsp;|&nbsp; <a href="tel:+6598631389">+65 9863 1389</a></p>
+  <p style="margin-top:1rem; font-size:0.72rem;">© 2026 Kor Beng Ha. All rights reserved.</p>
+</footer>
+
+<script>
+// ────────────────────────────────────────────
+// 1. STATS COUNT-UP ON SCROLL
+// ────────────────────────────────────────────
+(function() {
+  const counters = document.querySelectorAll('.counter');
+  let triggered = false;
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function runCounters() {
+    const duration = 2000;
+    const start = performance.now();
+    counters.forEach(el => {
+      const target = parseInt(el.dataset.target, 10);
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        el.textContent = Math.floor(easeOut(progress) * target);
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  const statsSection = document.getElementById('stats');
+  const obs = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && !triggered) {
+      triggered = true;
+      runCounters();
+    }
+  }, { threshold: 0.3 });
+  obs.observe(statsSection);
+})();
+
+// ────────────────────────────────────────────
+// 2. ANIMATED RADAR CHART ON SCROLL
+// ────────────────────────────────────────────
+(function() {
+  const canvas = document.getElementById('radarCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const cx = W / 2, cy = H / 2, R = W * 0.38;
+
+  const labels = [
+    'Admin Ops', 'Procurement', 'Communication',
+    'Data & IT', 'Events', 'Quality Mgmt'
+  ];
+  const values = [0.92, 0.85, 0.88, 0.80, 0.82, 0.78];
+  const n = labels.length;
+  let progress = 0;
+  let animating = false;
+
+  function getPoint(i, r) {
+    const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+    return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
+  }
+
+  function draw(p) {
+    ctx.clearRect(0, 0, W, H);
+
+    // Grid rings
+    [0.25, 0.5, 0.75, 1].forEach(level => {
+      ctx.beginPath();
+      for (let i = 0; i < n; i++) {
+        const pt = getPoint(i, R * level);
+        i === 0 ? ctx.moveTo(pt.x, pt.y) : ctx.lineTo(pt.x, pt.y);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = 'rgba(201,168,76,0.12)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    // Spokes
+    for (let i = 0; i < n; i++) {
+      const pt = getPoint(i, R);
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(pt.x, pt.y);
+      ctx.strokeStyle = 'rgba(201,168,76,0.15)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    // Data polygon
+    const animVals = values.map(v => v * p);
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const pt = getPoint(i, R * animVals[i]);
+      i === 0 ? ctx.moveTo(pt.x, pt.y) : ctx.lineTo(pt.x, pt.y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(201,168,76,0.12)';
+    ctx.fill();
+    const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
+    grad.addColorStop(0, 'rgba(100,255,218,0.25)');
+    grad.addColorStop(1, 'rgba(201,168,76,0.08)');
+    ctx.fillStyle = grad;
+    ctx.fill();
+    ctx.strokeStyle = '#c9a84c';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Data points
+    for (let i = 0; i < n; i++) {
+      const pt = getPoint(i, R * animVals[i]);
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, 5, 0, Math.PI * 2);
+      ctx.fillStyle = '#c9a84c';
+      ctx.fill();
+      ctx.strokeStyle = '#0a1628';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+
+    // Labels (always full)
+    ctx.font = 'bold 11px Segoe UI, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    for (let i = 0; i < n; i++) {
+      const pt = getPoint(i, R + 30);
+      ctx.fillStyle = '#8892b0';
+      ctx.fillText(labels[i], pt.x, pt.y);
+    }
+  }
+
+  function animate() {
+    if (!animating) return;
+    progress = Math.min(progress + 0.018, 1);
+    draw(progress);
+    if (progress < 1) requestAnimationFrame(animate);
+    else animating = false;
+  }
+
+  // Also animate skill bars
+  function animateBars() {
+    document.querySelectorAll('.skill-row').forEach(row => {
+      const pct = row.dataset.pct;
+      row.querySelector('.skill-bar-fill').style.width = pct + '%';
+    });
+  }
+
+  draw(0);
+  let radarTriggered = false;
+  const obsRadar = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && !radarTriggered) {
+      radarTriggered = true;
+      animating = true;
+      animate();
+      animateBars();
+    }
+  }, { threshold: 0.3 });
+  obsRadar.observe(document.getElementById('skills'));
+})();
+
+// ────────────────────────────────────────────
+// 3. CAREER TIMELINE SLIDER
+// ────────────────────────────────────────────
+(function() {
+  const jobs = [
+    {
+      year: 1987,
+      period: 'Jul 1987 – Sep 1990',
+      role: 'Quality Assurance Technician',
+      company: 'Varta Batteries Pte Ltd',
+      desc: 'Conducted reliability testing of cell batteries. Prepared golden samples for UK Underwriters Laboratories qualification. Consolidated competitor product analysis reports.',
+      tags: ['Quality Assurance', 'Testing', 'Report Analysis']
+    },
+    {
+      year: 1990,
+      period: 'Sep 1990 – Dec 1991',
+      role: 'Quality Engineering Assistant',
+      company: 'Singatronics Singapore Pte Ltd',
+      desc: 'Carried out in-process inspections and verified customer returns. Generated specifications and procedures on printed circuit board assembly inspection.',
+      tags: ['PCB Inspection', 'Process Audit', 'Quality Control']
+    },
+    {
+      year: 1992,
+      period: 'Jan 1992 – Sep 1997',
+      role: 'Quality Engineering Assistant',
+      company: 'Delco Electronics Singapore Pte Ltd',
+      desc: 'Administered document control centre. Generated quality plans, FMEA and PPAP documentation. Achieved 100% closure rate on customer returns and corrective actions.',
+      tags: ['FMEA', 'PPAP', 'Customer Returns', 'Document Control']
+    },
+    {
+      year: 1997,
+      period: 'Sep 1997 – Nov 2007',
+      role: 'TQC Administrator',
+      company: 'Lucent Technologies → LSI Technology',
+      desc: 'Administered employee suggestion scheme with 90% closure rate. Drove 80% employee participation as QC teams. Organised in-house and national QC conventions. Site coordinator for global employee recognition programme, represented Singapore at the US Allentown office.',
+      tags: ['TQC', 'Training', 'QC Convention', 'Employee Engagement', 'Ovation Awards']
+    },
+    {
+      year: 2007,
+      period: 'Dec 2007 – Nov 2008',
+      role: 'Temp Planner → Associate Buyer',
+      company: 'Kulicke & Soffa Pte Ltd',
+      desc: 'Sourced and procured all machine hardware. Negotiated pricing and lead times. Coordinated RMA administration with local and overseas suppliers. Achieved 100% success in urgent production and field retrofit delivery.',
+      tags: ['Procurement', 'Sourcing', 'Negotiation', 'Baan/Oracle']
+    },
+    {
+      year: 2008,
+      period: 'Dec 2008 – Jan 2009',
+      role: 'Document Control Administrator',
+      company: 'Mun Siong Engineering Pte Ltd',
+      desc: 'Led documentation and liaison with multinational drafting teams in India, Malaysia, Philippines, and Myanmar for the Bukom oil extraction pipeline assembly site.',
+      tags: ['Documentation', 'Multi-national Liaison', 'Engineering Support']
+    },
+    {
+      year: 2009,
+      period: 'Jan 2009 – Apr 2016',
+      role: 'Supply Chain Administrator',
+      company: 'Broadcom / Avago / LSI (7 years)',
+      desc: 'Focal point between factory planning and contract manufacturers on E2open forecasting. Managed global travel arrangements, training coordination, procurement, and IT account setup for new hires. Supported teams through multiple corporate mergers and relocations.',
+      tags: ['Supply Chain', 'E2open', 'Travel Management', 'Global Teams', 'Procurement']
+    },
+    {
+      year: 2016,
+      period: 'May 2016 – May 2017',
+      role: 'HR Executive → Temporary Officer',
+      company: 'Beyonics International → ITE College Central',
+      desc: 'Managed employee badges, access systems, locker administration, and operator training at Beyonics. Followed by finance administration and SAP vendor maintenance at ITE College Central.',
+      tags: ['HR Admin', 'SAP', 'Finance Admin', 'Employee Onboarding']
+    },
+    {
+      year: 2017,
+      period: 'May 2017 – Present',
+      role: 'Executive',
+      company: 'Singapore Polytechnic',
+      desc: 'Coordinates research lab setup, procurement administration, vendor liaison, asset management, IT representation, staff onboarding/offboarding, and facilities maintenance. Manages MOM pressure vessel registration and radiation license renewal. Continuously upskilling — completed AI tools courses in 2025.',
+      tags: ['Lab Management', 'Procurement', 'IT Rep', 'Asset Management', 'AI Upskilling']
+    }
+  ];
+
+  const track = document.getElementById('sliderTrack');
+  const thumb = document.getElementById('sliderThumb');
+  const fill = document.getElementById('sliderFill');
+  const ticks = document.getElementById('sliderTicks');
+  const yearLabel = document.getElementById('sliderYearLabel');
+
+  let current = 0;
+
+  function setCard(idx) {
+    idx = Math.max(0, Math.min(jobs.length - 1, idx));
+    current = idx;
+    const j = jobs[idx];
+    const card = document.getElementById('timelineCard');
+    card.style.opacity = 0;
+    setTimeout(() => {
+      document.getElementById('tcPeriod').textContent = j.period;
+      document.getElementById('tcRole').textContent = j.role;
+      document.getElementById('tcCompany').textContent = j.company;
+      document.getElementById('tcDesc').textContent = j.desc;
+      const tagsEl = document.getElementById('tcTags');
+      tagsEl.innerHTML = '';
+      j.tags.forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'tc-tag';
+        span.textContent = t;
+        tagsEl.appendChild(span);
+      });
+      card.style.opacity = 1;
+    }, 200);
+
+    const pct = idx / (jobs.length - 1);
+    const trackW = track.offsetWidth;
+    thumb.style.left = (pct * trackW) + 'px';
+    fill.style.width = (pct * 100) + '%';
+    yearLabel.textContent = j.year + (j.year === 2017 ? ' – Present' : '');
+
+    document.querySelectorAll('.slider-tick').forEach((el, i) => {
+      el.classList.toggle('active', i === idx);
+    });
+  }
+
+  // Build ticks
+  jobs.forEach((j, i) => {
+    const span = document.createElement('span');
+    span.className = 'slider-tick';
+    span.textContent = String(j.year).slice(2);
+    span.title = j.year;
+    span.addEventListener('click', () => setCard(i));
+    ticks.appendChild(span);
+  });
+
+  // Drag logic
+  let dragging = false;
+
+  function posToIdx(clientX) {
+    const rect = track.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    return Math.round(pct * (jobs.length - 1));
+  }
+
+  thumb.addEventListener('pointerdown', e => {
+    dragging = true;
+    thumb.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  document.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    setCard(posToIdx(e.clientX));
+  });
+  document.addEventListener('pointerup', () => { dragging = false; });
+
+  // Touch on track
+  track.addEventListener('click', e => setCard(posToIdx(e.clientX)));
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') setCard(current + 1);
+    if (e.key === 'ArrowLeft') setCard(current - 1);
+  });
+
+  // Init
+  setCard(0);
+  // Make card opacity transition smooth
+  document.getElementById('timelineCard').style.transition = 'opacity .2s ease';
+})();
+</script>
+
+</body>
+</html>
